@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: stephengrider/multi-server
+          image: ewfnz/k8s-server
           ports:
             - containerPort: 5000
           env:
