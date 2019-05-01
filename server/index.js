@@ -16,7 +16,7 @@ const pgClient = new Pool({
   host: keys.pgHost,
   database: keys.pgDatabase,
   password: keys.pgPassword,
-  port: keys.pgPort
+  port: keys.pgPort,
 });
 pgClient.on('error', () => console.log('Lost PG connection'));
 
@@ -29,14 +29,14 @@ const redis = require('redis');
 const redisClient = redis.createClient({
   host: keys.redisHost,
   port: keys.redisPort,
-  retry_strategy: () => 1000
+  retry_strategy: () => 1000,
 });
 const redisPublisher = redisClient.duplicate();
 
 // Express route handlers
 
 app.get('/', (req, res) => {
-  res.send('Hi');
+  res.send('Hi, with the first change in order to deploy it');
 });
 
 app.get('/values/all', async (req, res) => {
